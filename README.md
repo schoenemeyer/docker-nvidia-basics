@@ -14,3 +14,4 @@ Password:
 
 read https://ngc.nvidia.com/configuration/api-key
 
+https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/gpucloud.png
