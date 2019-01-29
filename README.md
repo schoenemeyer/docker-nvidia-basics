@@ -11,6 +11,8 @@ docker run hello-world
 # Check for the latest NVIDIA Docker Engine wrapper repository
 https://nvidia.github.io/nvidia-docker/
 
+sudo yum install  nvidia-docker2.noarch
+  
 # NVIDIA GPU CLOUD
 login to https://ngc.nvidia.com/containers and check for NVIDIA containers
 
