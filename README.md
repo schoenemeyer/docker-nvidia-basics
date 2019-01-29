@@ -1,7 +1,9 @@
 # Usage of NVIDIA Containers
 Check whether docker is running on your platform.
 If not please start with 
+```  
 sudo dockerd&
+```  
 and run
 ```  
 docker run hello-world
