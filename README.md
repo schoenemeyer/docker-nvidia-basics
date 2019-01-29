@@ -1,11 +1,11 @@
-# docker-nvidia-basics
-
-
-sudo dockerd
-
-check docker daemon running?
-
+# Usage of NVIDIA Containers
+Check whether docker is running on your platform.
+If not please start with 
+sudo dockerd&
+and run
+```  
 docker run hello-world
+```  
 # NVIDIA GPU CLOUD
 login to https://ngc.nvidia.com/containers and check for NVIDIA containers
 
