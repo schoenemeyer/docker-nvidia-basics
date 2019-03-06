@@ -1,24 +1,29 @@
 # Usage of NVIDIA Containers
-This test was done with the following HW and SW
-Docker Version 18.09.0
+This test was done with the following HW and SW    
+Docker Version 18.09.0  
 NVIDIA Driver 390.87 
 CentOS Linux release 7.6.1810 (Core) 
 1x AMD FX(tm)-6300 Six-Core Processor
 GeForce GTX 1050Ti
 
-``` 
+
 First, check if your docker daemon is running with 
+``` 
 ps -ef | grep docker    
-If not please start with 
+```
+If the output is empty please start with 
 ```  
 sudo dockerd&
 ```  
-and run
+and do a test run
 ```  
 docker run hello-world
 ```  
-``` 
-(base) [thomas@localhost ~]$ docker run -t --runtime=nvidia --rm nvidia/cuda:9.0-base-centos7 nvidia-smi
+
+```  
+docker pull  nvcr.io/nvidia/cuda:9.0-base-centos7
+
+docker run -t --runtime=nvidia --rm nvidia/cuda:9.0-base-centos7 nvidia-smi
 Unable to find image 'nvidia/cuda:9.0-base-centos7' locally
 9.0-base-centos7: Pulling from nvidia/cuda
 a02a4930cb5d: Pull complete 
@@ -44,7 +49,6 @@ Wed Mar  6 12:16:15 2019
 |  GPU       PID   Type   Process name                             Usage      |
 |=============================================================================|
 +-----------------------------------------------------------------------------+
-``` 
 
 ``` 
 More complete example 
