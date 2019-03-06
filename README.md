@@ -1,5 +1,14 @@
 # Usage of NVIDIA Containers
-Check whether docker daemon is running on your platform.
+This test was done with the following HW and SW
+Docker Version 18.09.0
+NVIDIA Driver 390.87 
+CentOS Linux release 7.6.1810 (Core) 
+1x AMD FX(tm)-6300 Six-Core Processor
+GeForce GTX 1050Ti
+
+``` 
+First, check if your docker daemon is running with 
+ps -ef | grep docker    
 If not please start with 
 ```  
 sudo dockerd&
