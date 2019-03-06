@@ -8,7 +8,7 @@ and run
 ```  
 docker run hello-world
 ```  
-
+``` 
 (base) [thomas@localhost ~]$ docker run -t --runtime=nvidia --rm nvidia/cuda:9.0-base-centos7 nvidia-smi
 Unable to find image 'nvidia/cuda:9.0-base-centos7' locally
 9.0-base-centos7: Pulling from nvidia/cuda
@@ -35,7 +35,9 @@ Wed Mar  6 12:16:15 2019
 |  GPU       PID   Type   Process name                             Usage      |
 |=============================================================================|
 +-----------------------------------------------------------------------------+
+``` 
 
+``` 
 More complete example 
 
 docker run -t --runtime=nvidia --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
@@ -45,12 +47,43 @@ nvidia-docker: line 34: /usr/bin/docker: Permission denied
 then
 1093  sudo semanage fcontext -a -t container_runtime_exec_t /usr/bin/nvidia-docker
  1094  sudo restorecon -v /usr/bin/nvidia-docker
+``` 
  
 commands are shorter when using nvidia-docker
 
 nvidia-docker run -t --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
 
 
+Another example
+Caffe2 is a deep-learning framework designed to easily express all model types, for example, CNN, RNN, and more, in a friendly python-based API, and execute them using a highly efficiently C++ and CUDA back-end.
+
+docker pull nvcr.io/nvidia/caffe2:18.08-py3
+
+Running Caffe2
+
+nvidia-docker run -it --rm -v /home/thomas/data/mnist:/data/mnist nvcr.io/nvidia/caffe2:18.08-py3
+
+git clone --recursive https://github.com/caffe2/tutorials caffe2_tutorials
+
+cd nvidia-examples/cifar10
+``` 
+./get_cifar10.sh
+./make_cifar10.sh
+python train_cifar10.py
+``` 
+...
+...
+Test loss: 0.814758, accuracy: 0.724100
+Epoch 10/10, iteration  100/500, loss=0.706333
+Epoch 10/10, iteration  200/500, loss=0.846863
+Epoch 10/10, iteration  300/500, loss=0.536812
+Epoch 10/10, iteration  400/500, loss=0.571494
+Epoch 10/10, iteration  500/500, loss=0.742528
+Test loss: 0.802806, accuracy: 0.729100
+``` 
+
+
+All Containers can be found here:
 # NVIDIA GPU CLOUD
 login to https://ngc.nvidia.com/containers and check for NVIDIA containers
 
