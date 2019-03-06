@@ -1,4 +1,4 @@
-# Usage of NVIDIA Containers derived from NVIDIA GPU Cloud (NGC)
+# Usage of NVIDIA Containers pulled from NVIDIA GPU Cloud (NGC)
 https://ngc.nvidia.com/catalog/landing
 For access you have to register (see below)   
 
