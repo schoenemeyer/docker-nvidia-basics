@@ -104,14 +104,14 @@ Test loss: 0.802806, accuracy: 0.729100
 ``` 
 
 All Containers can be found here:
-# NVIDIA GPU CLOUD
+## NVIDIA GPU CLOUD
 login to https://ngc.nvidia.com/containers and check for NVIDIA containers
 
-# Create API Key
+Create API Key
 read https://ngc.nvidia.com/configuration/api-key
 <img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/gpucloud.png" width="502">
 
-# Login to NGC
+Login to NGC
 docker login nvcr.io
 Username: $oauthtoken
 Password: <your API key>
