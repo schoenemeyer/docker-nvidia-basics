@@ -1,4 +1,7 @@
-# Usage of NVIDIA Containers
+# Usage of NVIDIA Containers derived from NVIDIA GPU Cloud (NGC)
+https://ngc.nvidia.com/catalog/landing
+For access you have to register (see below)   
+
 This test was done with the following HW and SW    
 
 Docker Version 18.09.0   
@@ -99,7 +102,6 @@ Epoch 10/10, iteration  400/500, loss=0.571494
 Epoch 10/10, iteration  500/500, loss=0.742528
 Test loss: 0.802806, accuracy: 0.729100
 ``` 
-
 
 All Containers can be found here:
 # NVIDIA GPU CLOUD
