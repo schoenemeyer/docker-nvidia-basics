@@ -1,11 +1,11 @@
 # Usage of NVIDIA Containers
 This test was done with the following HW and SW    
-Docker Version 18.09.0  
-NVIDIA Driver 390.87 
-CentOS Linux release 7.6.1810 (Core) 
-1x AMD FX(tm)-6300 Six-Core Processor
-GeForce GTX 1050Ti
 
+Docker Version 18.09.0   
+NVIDIA Driver 390.87   
+CentOS Linux release 7.6.1810 (Core)   
+1x AMD FX(tm)-6300 Six-Core Processor   
+GeForce GTX 1050Ti  
 
 First, check if your docker daemon is running with 
 ``` 
@@ -19,10 +19,13 @@ and do a test run
 ```  
 docker run hello-world
 ```  
+Now lets start with pulling a Nvidia Container from Nvidia NGC and start nvidia-smi in your container
 
 ```  
 docker pull  nvcr.io/nvidia/cuda:9.0-base-centos7
-
+```  
+or start directly with 
+```  
 docker run -t --runtime=nvidia --rm nvidia/cuda:9.0-base-centos7 nvidia-smi
 Unable to find image 'nvidia/cuda:9.0-base-centos7' locally
 9.0-base-centos7: Pulling from nvidia/cuda
@@ -51,41 +54,43 @@ Wed Mar  6 12:16:15 2019
 +-----------------------------------------------------------------------------+
 
 ``` 
-More complete example 
+Lets move on with some more comprehensive example, we will run the famous nbody example from the Cuda Samples in a container
 
+``` 
 docker run -t --runtime=nvidia --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
-
-if this error comes up
+``` 
+(Side remark) if this error comes up
+``` 
 nvidia-docker: line 34: /usr/bin/docker: Permission denied
 then
-1093  sudo semanage fcontext -a -t container_runtime_exec_t /usr/bin/nvidia-docker
- 1094  sudo restorecon -v /usr/bin/nvidia-docker
+sudo semanage fcontext -a -t container_runtime_exec_t /usr/bin/nvidia-docker
+sudo restorecon -v /usr/bin/nvidia-docker
 ``` 
  
-commands are shorter when using nvidia-docker
-
-nvidia-docker run -t --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
-
-
-Another example
-Caffe2 is a deep-learning framework designed to easily express all model types, for example, CNN, RNN, and more, in a friendly python-based API, and execute them using a highly efficiently C++ and CUDA back-end.
-
-docker pull nvcr.io/nvidia/caffe2:18.08-py3
-
-Running Caffe2
-
-nvidia-docker run -it --rm -v /home/thomas/data/mnist:/data/mnist nvcr.io/nvidia/caffe2:18.08-py3
-
-git clone --recursive https://github.com/caffe2/tutorials caffe2_tutorials
-
-cd nvidia-examples/cifar10
+instead of docker you can run commands using nvidia-docker directly and it is a bit shorter
 ``` 
+nvidia-docker run -t --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
+``` 
+This will open a new windows with the animated results of nbody.
+
+Lets try another example for Deep Learning. Caffe2 is a deep-learning framework designed to easily express all model types, for example, CNN, RNN, and more, in a friendly python-based API, and execute them using a highly efficiently C++ and CUDA back-end. We get the container
+``` 
+docker pull nvcr.io/nvidia/caffe2:18.08-py3
+``` 
+Then we start running the Caffe2 container by 
+``` 
+nvidia-docker run -it --rm -v /home/thomas/data/mnist:/data/mnist nvcr.io/nvidia/caffe2:18.08-py3
+``` 
+We can get the tutorial samples also 
+``` 
+git clone --recursive https://github.com/caffe2/tutorials caffe2_tutorials
+cd nvidia-examples/cifar10
+
 ./get_cifar10.sh
 ./make_cifar10.sh
 python train_cifar10.py
-``` 
-...
-...
+
+
 Test loss: 0.814758, accuracy: 0.724100
 Epoch 10/10, iteration  100/500, loss=0.706333
 Epoch 10/10, iteration  200/500, loss=0.846863
