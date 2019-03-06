@@ -1,5 +1,5 @@
 # Usage of NVIDIA Containers
-Check whether docker is running on your platform.
+Check whether docker daemon is running on your platform.
 If not please start with 
 ```  
 sudo dockerd&
@@ -8,11 +8,49 @@ and run
 ```  
 docker run hello-world
 ```  
-# Check for the latest NVIDIA Docker Engine wrapper repository
-https://nvidia.github.io/nvidia-docker/
 
-sudo yum install  nvidia-docker2.noarch
-  
+(base) [thomas@localhost ~]$ docker run -t --runtime=nvidia --rm nvidia/cuda:9.0-base-centos7 nvidia-smi
+Unable to find image 'nvidia/cuda:9.0-base-centos7' locally
+9.0-base-centos7: Pulling from nvidia/cuda
+a02a4930cb5d: Pull complete 
+ea81d4671bf2: Pull complete 
+93458a2f72ef: Pull complete 
+1d68675f2d7a: Pull complete 
+4134a3a6a7c8: Pull complete 
+Digest: sha256:2ef556769c4eaf28011c2105bfdaf1b72408b58c7ccfb76fa00c16a2dd15c753
+Status: Downloaded newer image for nvidia/cuda:9.0-base-centos7
+Wed Mar  6 12:16:15 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 390.87                 Driver Version: 390.87                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 105...  Off  | 00000000:01:00.0  On |                  N/A |
+| 30%   27C    P8    N/A /  75W |    273MiB /  4036MiB |      1%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
++-----------------------------------------------------------------------------+
+
+More complete example 
+
+docker run -t --runtime=nvidia --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
+
+if this error comes up
+nvidia-docker: line 34: /usr/bin/docker: Permission denied
+then
+1093  sudo semanage fcontext -a -t container_runtime_exec_t /usr/bin/nvidia-docker
+ 1094  sudo restorecon -v /usr/bin/nvidia-docker
+ 
+commands are shorter when using nvidia-docker
+
+nvidia-docker run -t --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
+
+
 # NVIDIA GPU CLOUD
 login to https://ngc.nvidia.com/containers and check for NVIDIA containers
 
