@@ -72,7 +72,7 @@ sudo semanage fcontext -a -t container_runtime_exec_t /usr/bin/nvidia-docker
 sudo restorecon -v /usr/bin/nvidia-docker
 ``` 
  
-instead of docker you can run commands using nvidia-docker directly and it is a bit shorter
+instead of docker you can run commands using nvidia-docker directly and it is a bit shorter. Nvidia-docker is ust a wrapper that sets up the nvidia runtime to be the default when invoking docker commands.
 ``` 
 nvidia-docker run -t --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nbody  nbody
 ``` 
