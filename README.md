@@ -65,7 +65,9 @@ docker run -t --runtime=nvidia --net=host --rm nvcr.io/nvidia/k8s/cuda-sample:nb
 (Side remark) if this error comes up
 ``` 
 nvidia-docker: line 34: /usr/bin/docker: Permission denied
-then
+``` 
+then you should run the two lines below:
+``` 
 sudo semanage fcontext -a -t container_runtime_exec_t /usr/bin/nvidia-docker
 sudo restorecon -v /usr/bin/nvidia-docker
 ``` 
