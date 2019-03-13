@@ -132,3 +132,13 @@ nvcr.io/nvidia/tensorflow   18.07-py3           8289b0a3b285        7 months ago
 nvcr.io/nvidia/pytorch      17.12               5ac6ff8f9a81        14 months ago       4.52GB
 dockersamples/static-site   latest              f589ccde7957        2 years ago         191MB
 ```  
+
+## Container compatible to Driver 390.87
+
+nvcr.io/nvidia/cuda:9.0-devel-ubuntu16.04    
+nvcr.io/nvidia/inferenceserver:18.08.1-py3     
+nvcr.io/nvidia/torch:18.08-py2
+nvcr.io/nvidia/theano:18.08
+nvcr.io/hpc/gromacs:2018.2
+nvcr.io/hpc/lattice-microbes:2018.03
+nvcr.io/hpc/lattice-microbes:2018.03
