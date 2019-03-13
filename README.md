@@ -137,8 +137,8 @@ dockersamples/static-site   latest              f589ccde7957        2 years ago 
 
 nvcr.io/nvidia/cuda:9.0-devel-ubuntu16.04    
 nvcr.io/nvidia/inferenceserver:18.08.1-py3     
-nvcr.io/nvidia/torch:18.08-py2
-nvcr.io/nvidia/theano:18.08
-nvcr.io/hpc/gromacs:2018.2
-nvcr.io/hpc/lattice-microbes:2018.03
-nvcr.io/hpc/lattice-microbes:2018.03
+nvcr.io/nvidia/torch:18.08-py2    
+nvcr.io/nvidia/theano:18.08     
+nvcr.io/hpc/gromacs:2018.2     
+nvcr.io/hpc/lattice-microbes:2018.03   
+nvcr.io/hpc/lattice-microbes:2018.03    
