@@ -86,6 +86,10 @@ Then we start running the Caffe2 container by
 ``` 
 nvidia-docker run -it --rm -v /home/thomas/data/mnist:/data/mnist nvcr.io/nvidia/caffe2:18.08-py3
 ``` 
+Or starting the Tensorflowcontainer with 
+``` 
+nvidia-docker run -it --rm -v /home/thomas/data/tf:/data/tf nvcr.io/nvidia/tensorflow:19.02-py3
+``` 
 We can get the tutorial samples also 
 ``` 
 git clone --recursive https://github.com/caffe2/tutorials caffe2_tutorials
