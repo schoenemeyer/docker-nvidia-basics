@@ -172,4 +172,4 @@ root@6b2596d4f4cb:/workspace# jupyter notebook --ip 0.0.0.0 --port 9999 --allow-
 Open browser on your local machine and open localhost:9999
 login with your token
 Done.
-<img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/Capture.PNG" width="552">
+<img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/Capture.PNG" width="700">
