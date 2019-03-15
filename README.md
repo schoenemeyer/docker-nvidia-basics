@@ -150,6 +150,7 @@ nvcr.io/hpc/lattice-microbes:2018.03
 
 ## Running Jupyter on a remote docker container via SSH
 
+If you want to 
 The background is explained in detailed here:
 https://medium.com/@lucasrg/using-jupyter-notebook-running-on-a-remote-docker-container-via-ssh-ea2c3ebb9055    
 The image provided by the author explains it.
@@ -159,12 +160,12 @@ ssh in the remote machine with –L
 ``` 
 thomass@THOMASS-LT1:~$ ssh -L 9999:localhost:9999 thomas@<yourgpuserver>.nvidia.com
 ``` 
-Start the nvidia-docker on the GPU machine
+Start the nvidia-docker on the GPU machine (incl. mounting your current working directory.
 ``` 
-nvidia-docker run -it -p 9999:9999 nvcr.io/nvidia/tensorflow:18.08-py3
+nvidia-docker run -it -p 9999:9999  --rm -v `pwd`:`pwd` -w `pwd` nvcr.io/nvidia/tensorflow:18.08-py3
 ``` 
 Start jupyter
-(optional install might be required) pip install jupyter
+(an optional install might be required) pip install jupyter
 ``` 
 root@6b2596d4f4cb:/workspace# jupyter notebook --ip 0.0.0.0 --port 9999 --allow-root
 ``` 
