@@ -174,3 +174,14 @@ login with your token
 Done.    
 
 <img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/Capture.PNG" width="900">
+
+If you start your jupyter notebook on your local machine, you might see this message:
+
+``` 
+socket.gaierror: [Errno -2] Name or service not known
+``` 
+Then you start over with 
+``` 
+jupyter notebook --NotebookApp.allow_origin='*'
+``` 
+
