@@ -153,8 +153,7 @@ nvcr.io/hpc/lattice-microbes:2018.03
 The background is explained in detailed here:
 https://medium.com/@lucasrg/using-jupyter-notebook-running-on-a-remote-docker-container-via-ssh-ea2c3ebb9055    
 The image provided by the author explains it.
-https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/1%20TAC174dy1N_boaMkCOKrtg.png
-
+<img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/1%20TAC174dy1N_boaMkCOKrtg.png" width="352">
  
 ssh in the remote machine with –L 
 ``` 
