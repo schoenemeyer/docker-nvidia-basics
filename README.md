@@ -153,7 +153,7 @@ nvcr.io/hpc/lattice-microbes:2018.03
 If you want to use Jupyter locally on your notebook while Jupyter web-app is running the code in a remote machine, you should read this post. The background is explained in detailed    
 https://medium.com/@lucasrg/using-jupyter-notebook-running-on-a-remote-docker-container-via-ssh-ea2c3ebb9055    
 The image provided by the author explains it.
-<img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/1%20TAC174dy1N_boaMkCOKrtg.png" width="352">
+<img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/1%20TAC174dy1N_boaMkCOKrtg.png" width="552">
 ## Quick Guide
 
 ssh in the remote machine with –L 
@@ -170,6 +170,7 @@ Start jupyter
 root@6b2596d4f4cb:/workspace# jupyter notebook --ip 0.0.0.0 --port 9999 --allow-root
 ``` 
 Open browser on your local machine and open localhost:9999
-login with your token
-Done.
-<img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/Capture.PNG" width="700">
+login with your token   
+Done.    
+
+<img src="https://github.com/schoenemeyer/docker-nvidia-basics/blob/master/Capture.PNG" width="900">
