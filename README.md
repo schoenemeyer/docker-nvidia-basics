@@ -88,7 +88,7 @@ nvidia-docker run -it --rm -v /home/thomas/data/mnist:/data/mnist nvcr.io/nvidia
 ``` 
 Or starting the Tensorflowcontainer with 
 ``` 
-nvidia-docker run -it --rm -v /home/thomas/data/tf:/data/tf nvcr.io/nvidia/tensorflow:19.02-py3
+nvidia-docker run -it --rm -v /home/thomas/data/tf:/data/tf nvcr.io/nvidia/tensorflow:18.07-py3
 ``` 
 We can get the tutorial samples also 
 ``` 
